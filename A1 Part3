@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+public class AssignmentOne {
+    public static void main(String[] args) {
+        
+        GeneralPractitioner gp1 = new GeneralPractitioner(1, "maker", "Family doctor", "Family Medicine");
+        GeneralPractitioner gp2 = new GeneralPractitioner(2, "loser", "Pediatric doctor", "Pediatrics");
+        GeneralPractitioner gp3 = new GeneralPractitioner(3, "smeitw", "Senior doctor", "Geriatrics");
+        Surgeon surgeon1 = new Surgeon(4, "bob", "Tooth surgeon", "Tooth Surgery");
+        Surgeon surgeon2 = new Surgeon(5, "zhangpeng", "Skin surgeon", "Dentistry");
+        System.out.println("The health professional details are:");
+        System.out.println("ID"+"\t\t\t"+"Name"+"\t\t\t\t"+"description\t\t\t\t\t\t\tSpecialty");
+        gp1.printDetails();
+        gp2.printDetails();
+        gp3.printDetails();
+        surgeon1.printDetails();
+        surgeon2.printDetails();
+        System.out.println("------------------------------------------");
