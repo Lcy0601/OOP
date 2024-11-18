@@ -1,0 +1,28 @@
+public class Surgeon extends HealthProfessional {
+
+    private String surgeryType;
+
+    public Surgeon() {
+
+        super();
+        this.surgeryType = "General Surgery";
+    }
+
+    public Surgeon(int id, String name, String description, String surgeryType) {
+        super(id, name, description);
+        this.surgeryType = surgeryType;
+    }
+
+    public void printDetails() {
+        super.printDetails();
+        System.out.println("\t\t" + surgeryType);
+    }
+
+    public String getSurgeryType() {
+        return surgeryType;
+    }
+
+    public void setSurgeryType(String surgeryType) {
+        this.surgeryType = surgeryType;
+    }
+}
