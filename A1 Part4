@@ -1,0 +1,64 @@
+public class Appointment {
+    private String patientName;
+    private String patientPhone;
+    private String preferredTime;
+    private HealthProfessional doctor;
+
+    public Appointment() {
+        this.patientName = "Unknown";
+        this.patientPhone = "Unknown";
+        this.preferredTime = "Unknown";
+        this.doctor = null;
+    }
+
+    public Appointment(String patientName, String patientPhone, String preferredTime, HealthProfessional doctor) {
+        this.patientName = patientName;
+        this.patientPhone = patientPhone;
+        this.preferredTime = preferredTime;
+        this.doctor = doctor;
+    }
+
+    public void printDetails() {
+        System.out.println("Patient Name: " + patientName);
+        System.out.println("Patient Phone: " + patientPhone);
+        System.out.println("Preferred Time: " + preferredTime);
+        System.out.println("The health professional details are:");
+        System.out.println("ID"+"\t\t\t"+"Name"+"\t\t\t\t"+"description\t\t\t\t\t\t\tSpecialty");
+        if (doctor != null) {
+            doctor.printDetails();
+        }
+    }
+
+    public String getPatientPhone() {
+        return patientPhone;
+    }
+
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public void setPatientPhone(String patientPhone) {
+        this.patientPhone = patientPhone;
+    }
+
+    public String getPreferredTime() {
+        return preferredTime;
+    }
+
+    public void setPreferredTime(String preferredTime) {
+        this.preferredTime = preferredTime;
+    }
+
+    public HealthProfessional getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(HealthProfessional doctor) {
+        this.doctor = doctor;
+    }
+}
