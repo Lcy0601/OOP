@@ -1,0 +1,49 @@
+ 
+        ArrayList<Appointment> appointments = new ArrayList<>();
+
+   
+        appointments.add(new Appointment("maker", "100056789", "08:00", gp1));
+        appointments.add(new Appointment("bob", "100933322", "10:00", surgeon1));
+        appointments.add(new Appointment("zhangpeng", "100933322", "10:00", surgeon2));
+        appointments.add(new Appointment("loser", "10029344", "14:30", gp2));
+        System.out.println("Print an existing appointment:");
+
+        printExistingAppointments(appointments);
+
+
+        cancelBooking(appointments, "100056789");
+
+        System.out.println("Print the updated appointment:");
+
+        printExistingAppointments(appointments);
+    }
+
+    public static void printExistingAppointments(ArrayList<Appointment> appointments) {
+        if (appointments.isEmpty()) {
+            System.out.println("No existing appointments.");
+        } else {
+
+            for (Appointment appointment : appointments) {
+
+                appointment.printDetails();
+                System.out.println("------------------------------------------");
+
+            }
+        }
+    }
+
+    public static void cancelBooking(ArrayList<Appointment> appointments, String patientPhone) {
+        boolean found = false;
+        for (int i = 0; i < appointments.size(); i++) {
+            if (appointments.get(i).getPatientPhone().equals(patientPhone)) {
+                appointments.remove(i);
+                found = true;
+                System.out.println("Appointment cancelled for phone: " + patientPhone);
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("No appointment found for phone: " + patientPhone);
+        }
+    }
+}
